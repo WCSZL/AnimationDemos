@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  AnimationDemosLike
+//
+//  Created by wxw on 2018/7/25.
+//  Copyright © 2018年 wxw. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIView+Frame.h"
+#import "SuspensionHelper.h"
+#import "WWDrawLineHelper.h"
+
+//开发期---发布期
+#ifdef DEBUG
+#define WWLog(...) NSLog(__VA_ARGS__)
+#else
+#define WWLog(...)
+#endif
+
+
+
+
+
+//屏幕宽高
+#define WWScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define WWScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//RGB色
+#define WWColor(r,g,b)   [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define WWColorWithA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+//随机色
+#define WWRandomColor WWColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+
+#endif /* PrefixHeader_pch */
